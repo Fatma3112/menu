@@ -74,7 +74,7 @@ const menu = [{
 
 
 
-const menuItem = document.querySelector("container");
+const menuItem = document.querySelector(".container");
 
 window.addEventListener("DOMContentLoaded", function() {
     displayMenuItems(menu);
@@ -82,8 +82,22 @@ window.addEventListener("DOMContentLoaded", function() {
 
 function displayMenuItems(menuitems) {
     let displayMenu = menuitems.map(function(item) {
-        return '<article class="menuItem"> < img src = $ { item.img } alt = $ { item.img } class = "img" >  < div class = "item" > <   header >< h3 class = "title" > $ { item.title } < /h3> <  h3 class = "price" > $$ { item.price } < /h3> < /header> <p class = "info" >  $ { item.desc }   </p>   </div>  </article>';
+        return `<article class="menuItem">
+        <img src=${item.img} alt=${item.img} class="img">
+        <div class="item">
+            <header>
+                <h3 class="title">${item.title}</h3>
+                <h3 class="price">$${item.price}</h3>
+            </header>
+
+            <p class="info">
+            ${item.desc}
+            </p>
+
+        </div>
+    </article>`;
     });
     displayMenu = displayMenu.join("");
-    console.log(displayMenu);
+    menuItem.innerHTML = displayMenu;
+
 }
