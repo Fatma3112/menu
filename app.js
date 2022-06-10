@@ -101,3 +101,7 @@ function displayMenuItems(menuitems) {
     menuItem.innerHTML = displayMenu;
 
 }
+
+function button() {
+
+}
